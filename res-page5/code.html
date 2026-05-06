@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa - 確認</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#b28acc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e6e2df",
+                        "on-tertiary-fixed-variant": "#5a3873",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ff92b2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2c0844",
+                        "on-primary-container": "#c48d78",
+                        "tertiary-container": "#44225c",
+                        "tertiary": "#2d0a46",
+                        "primary-fixed-dim": "#f5b9a2",
+                        "on-surface-variant": "#51443f",
+                        "tertiary-fixed-dim": "#e1b7fc",
+                        "outline": "#84746e",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#815340",
+                        "outline-variant": "#d6c3bc",
+                        "inverse-surface": "#32302e",
+                        "surface-container-high": "#ece7e4",
+                        "surface-variant": "#e6e2df",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb1c5",
+                        "on-primary-fixed": "#321205",
+                        "on-surface": "#1d1b1a",
+                        "primary": "#331406",
+                        "primary-container": "#4d2818",
+                        "background": "#fef8f5",
+                        "inverse-on-surface": "#f5f0ed",
+                        "surface-container-low": "#f8f3f0",
+                        "surface-container": "#f2edea",
+                        "on-primary-fixed-variant": "#663c2b",
+                        "inverse-primary": "#f5b9a2",
+                        "on-secondary-fixed": "#3f001b",
+                        "surface-dim": "#ded9d6",
+                        "on-secondary-fixed-variant": "#7c2846",
+                        "tertiary-fixed": "#f3daff",
+                        "on-secondary-container": "#7a2744",
+                        "surface": "#fef8f5",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-background": "#1d1b1a",
+                        "secondary": "#9a405d",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fef8f5",
+                        "primary-fixed": "#ffdbce",
+                        "secondary-fixed": "#ffd9e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif JP", "serif"],
+                        "display": ["Noto Serif JP", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col pb-32">
+<!-- Top Navigation -->
+<nav class="bg-[#fef8f5]/80 dark:bg-stone-900/80 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-10 h-24 max-w-full mx-auto">
+<div class="text-2xl font-serif font-semibold text-[#331406] dark:text-stone-50 tracking-tighter">ehl:fa</div>
+<div class="hidden md:flex gap-8">
+<!-- Navigation Items would go here if this wasn't a linear flow, but keeping structure as per JSON intent -->
+<span class="text-[#d6c3bc] dark:text-stone-500 font-medium font-serif text-lg tracking-tight Noto Serif JP">ご予約内容</span>
+</div>
+<div class="text-[#4D2818] dark:text-stone-200 font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 cursor-pointer">ご予約内容</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 px-6 max-w-3xl mx-auto w-full">
+<!-- Header -->
+<header class="mb-12 text-center">
+<span class="text-secondary font-label uppercase tracking-widest text-xs font-semibold mb-3 block">ステップ 5 / 5</span>
+<h1 class="font-headline text-4xl text-primary mb-4">ご予約内容の確認</h1>
+<p class="font-body text-on-surface-variant text-lg">ご予約を確定する前に、ご入力内容に誤りがないかご確認ください。</p>
+</header>
+<!-- Bento Grid Layout for Summary -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<!-- Stylist Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-6">
+<img alt="Stylist Profile" class="w-20 h-20 rounded-full object-cover" data-alt="A professional headshot of a female hair stylist in a bright, modern luxury salon. She has a warm, welcoming smile. The lighting is soft and flattering, highlighting the upscale editorial sanctuary vibe of the space. The colors are muted earth tones with bright white accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdVKBRLl1B4jCWPhjm_wEHpekWSt0uxA7xXLZ7DUjFpdgdz2v1QsDuZ2oqgoYliSCZ0oT8AKE0OhmbHAF1w6SGlIKTAs2c02MTfPw_gH5otMUtDv1syEyRQzJ1J77g-L_Eq8m_kkwYoT-5Xu6Dx6kAiZdip9IQLtPKI4tp7XwYwUOAtv5EtrSovwI69ymxLmxbJZ_tsqumTJrEOGcsAvcJIqEVuASlU_AlpygNGoRq5YJNph4-TtB-gGDgLIm-VaNM-Q45JQmPQ6Zj"/>
+<div>
+<span class="font-label uppercase tracking-widest text-xs text-on-surface-variant font-semibold mb-1 block">担当スタイリスト</span>
+<h3 class="font-headline text-xl text-primary">エレナ・ロッシ</h3>
+<p class="font-body text-sm text-secondary mt-1">マスターカラーリスト</p>
+</div>
+</div>
+<!-- Date & Time Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-center">
+<span class="font-label uppercase tracking-widest text-xs text-on-surface-variant font-semibold mb-2 block">ご予約日時</span>
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-headline text-lg text-primary">10月26日(木)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">schedule</span>
+<span class="font-headline text-lg text-primary">14:00（120分）</span>
+</div>
+</div>
+<!-- Services Card (Spans full width) -->
+<div class="bg-surface-container-low p-6 rounded-xl md:col-span-2">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label uppercase tracking-widest text-xs text-on-surface-variant font-semibold">選択されたメニュー</span>
+<button class="text-secondary font-label text-sm font-semibold underline underline-offset-4 hover:text-primary transition-colors">変更</button>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/20">
+<div>
+<h4 class="font-headline text-lg text-primary">バレイヤージュ＆トナー</h4>
+<p class="font-body text-sm text-on-surface-variant">フルヘッドバレイヤージュ、カスタムグロス付き。</p>
+</div>
+<span class="font-body text-primary font-semibold">¥24,000</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/20">
+<div>
+<h4 class="font-headline text-lg text-primary">シグネチャーカット</h4>
+<p class="font-body text-sm text-on-surface-variant">シャンプー・ブロー込み。</p>
+</div>
+<span class="font-body text-primary font-semibold">¥9,500</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-headline text-xl text-primary font-bold">推定合計金額</span>
+<span class="font-headline text-2xl text-primary font-bold">¥33,500</span>
+</div>
+</div>
+</div>
+<!-- Client Info Card (Spans full width) -->
+<div class="bg-surface-container-low p-6 rounded-xl md:col-span-2">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label uppercase tracking-widest text-xs text-on-surface-variant font-semibold">お客様情報</span>
+<button class="text-secondary font-label text-sm font-semibold underline underline-offset-4 hover:text-primary transition-colors">変更</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="font-label text-xs text-on-surface-variant block mb-1">お名前</span>
+<span class="font-body text-primary">ジェーン・ドウ</span>
+</div>
+<div>
+<span class="font-label text-xs text-on-surface-variant block mb-1">お電話番号</span>
+<span class="font-body text-primary">03-1234-5678</span>
+</div>
+<div class="col-span-2">
+<span class="font-label text-xs text-on-surface-variant block mb-1">メールアドレス</span>
+<span class="font-body text-primary">jane.doe@example.com</span>
+</div>
+<div class="col-span-2">
+<span class="font-label text-xs text-on-surface-variant block mb-1">スタイリストへのご要望</span>
+<p class="font-body text-primary text-sm bg-surface-container-highest p-3 rounded-md mt-1">顔周りにさりげないハイライトを入れたいです。太すぎるのは避けてください。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="flex flex-col items-center justify-center mt-12 mb-8">
+<button class="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-md font-label uppercase tracking-widest font-semibold hover:shadow-[0_0_32px_rgba(51,20,6,0.15)] transition-all duration-300">
+                予約を確定する
+            </button>
+<p class="font-body text-xs text-on-surface-variant mt-4 text-center">確定することにより、当店の<a class="underline hover:text-primary" href="#">キャンセルポリシー</a>に同意したものとみなされます。</p>
+</div>
+</main>
+<!-- Bottom Navigation (Hidden on Mobile due to linear flow intent, but rendering per instructions as semantic shell) -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 py-6 pb-10 bg-[#fef8f5] dark:bg-stone-900 docked bottom-0 w-full rounded-t-[2rem] tonal-layering shadow-[0_-8px_30px_rgb(77,40,24,0.04)] shadow-2xl md:hidden">
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 0;">person_search</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">スタイリスト</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 0;">spa</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">メニュー</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">日時</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">詳細</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#4D2818] dark:bg-stone-100 text-[#fef8f5] dark:text-[#331406] rounded-full px-5 py-2.5 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors Active: scale-95 duration-150 ease-out">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">確定</span>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa - ご予約</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={theme:{extend:{colors:{"surface":"#fef8f5","surface-container":"#f2edea","surface-container-low":"#f8f3f0","surface-container-lowest":"#ffffff","surface-container-high":"#ece7e4","surface-container-highest":"#e6e2df","primary":"#331406","primary-container":"#4d2818","on-primary":"#ffffff","on-primary-container":"#c48d78","secondary":"#9a405d","on-surface":"#1d1b1a","on-surface-variant":"#51443f","outline":"#84746e","outline-variant":"#d6c3bc","primary-fixed":"#ffdbce"},fontFamily:{"headline":["Noto Serif JP","serif"],"body":["Inter","sans-serif"]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+body{font-family:'Inter','Noto Serif JP',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Noto Serif JP',serif}
+.cta-gradient{background:linear-gradient(135deg,#331406,#4d2818)}
+</style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-[#fef8f5]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-6 md:px-10 h-20 max-w-screen-2xl mx-auto">
+<a href="index.html" class="font-headline text-2xl font-bold tracking-tighter text-primary">ehl:fa</a>
+<div class="hidden md:flex items-center gap-6">
+<button onclick="goToStep(1)" class="nav-step text-sm uppercase tracking-widest font-medium pb-1 transition-all">スタイリスト</button>
+<button onclick="goToStep(2)" class="nav-step text-sm uppercase tracking-widest font-medium pb-1 transition-all">メニュー</button>
+<button onclick="goToStep(3)" class="nav-step text-sm uppercase tracking-widest font-medium pb-1 transition-all">日時</button>
+<button onclick="goToStep(4)" class="nav-step text-sm uppercase tracking-widest font-medium pb-1 transition-all">詳細</button>
+<button onclick="goToStep(5)" class="nav-step text-sm uppercase tracking-widest font-medium pb-1 transition-all">確認</button>
+</div>
+<a href="index.html" class="hidden md:flex items-center gap-1 text-primary font-medium hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-lg">arrow_back</span>TOPへ戻る
+</a>
+</div>
+</nav>
+
+<main class="flex-grow pt-28 pb-32 md:pb-16 px-6 md:px-10 max-w-5xl mx-auto w-full">
+
+<!-- STEP 1: Stylist -->
+<div id="step-1" class="step-panel hidden">
+<div class="mb-12 text-center md:text-left">
+<p class="text-xs tracking-[0.15em] text-on-surface-variant uppercase mb-3">Step 1 / 5</p>
+<h1 class="text-4xl md:text-5xl text-primary font-medium tracking-tight">スタイリストを選択</h1>
+<p class="mt-4 text-on-surface-variant max-w-2xl text-lg">当サロンのプロフェッショナルをお選びください。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="stylist-card cursor-pointer rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_rgb(51,20,6,0.05)] transition-all" onclick="selectStylist('桂 エレナ',this)">
+<div class="aspect-[4/3] overflow-hidden"><img src="images/stylist-elena.png" alt="桂 エレナ" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+<div class="p-6"><p class="text-xs tracking-widest text-primary uppercase mb-1">ディレクター</p><h3 class="text-2xl text-primary mb-2">桂 エレナ</h3><p class="text-sm text-on-surface-variant">洗練されたカラーと精密なカットを得意としています。</p></div>
+</div>
+<div class="stylist-card cursor-pointer rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_rgb(51,20,6,0.05)] transition-all" onclick="selectStylist('松本 聖也',this)">
+<div class="aspect-[4/3] overflow-hidden"><img src="images/stylist-seiya.png" alt="松本 聖也" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+<div class="p-6"><p class="text-xs tracking-widest text-primary uppercase mb-1">トップスタイリスト</p><h3 class="text-2xl text-primary mb-2">松本 聖也</h3><p class="text-sm text-on-surface-variant">構築的なスタイルとモダンなメンズグルーミングのスペシャリスト。</p></div>
+</div>
+<div class="stylist-card cursor-pointer rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_rgb(51,20,6,0.05)] transition-all" onclick="selectStylist('岡田 志津香',this)">
+<div class="aspect-[4/3] overflow-hidden"><img src="images/stylist-shizuka.png" alt="岡田 志津香" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+<div class="p-6"><p class="text-xs tracking-widest text-primary uppercase mb-1">トップスタイリスト</p><h3 class="text-2xl text-primary mb-2">岡田 志津香</h3><p class="text-sm text-on-surface-variant">オーガニックな質感作りと修復トリートメントのエキスパート。</p></div>
+</div>
+<div class="stylist-card cursor-pointer rounded-xl overflow-hidden bg-white shadow-[0_4px_20px_rgb(51,20,6,0.05)] transition-all" onclick="selectStylist('藤井 希',this)">
+<div class="aspect-[4/3] overflow-hidden"><img src="images/stylist-nozomi.png" alt="藤井 希" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/></div>
+<div class="p-6"><p class="text-xs tracking-widest text-primary uppercase mb-1">スタイリスト</p><h3 class="text-2xl text-primary mb-2">藤井 希</h3><p class="text-sm text-on-surface-variant">日常のエレガンスに新鮮な視点をもたらします。</p></div>
+</div>
+</div>
+<div class="mt-12 flex justify-end">
+<button onclick="goToStep(2)" class="cta-gradient text-white h-14 px-10 rounded-md text-sm uppercase tracking-widest hover:opacity-90 transition-opacity shadow-[0_8px_32px_rgba(51,20,6,0.15)] flex items-center gap-3">
+メニューへ進む<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- STEP 2: Menu -->
+<div id="step-2" class="step-panel hidden">
+<div class="mb-12 text-center">
+<p class="text-xs tracking-[0.15em] text-on-surface-variant uppercase mb-3">Step 2 / 5</p>
+<h1 class="text-4xl md:text-5xl text-primary font-medium">メニューをお選びください</h1>
+<p class="mt-4 text-on-surface-variant max-w-2xl mx-auto text-lg">お客様に合わせたメニューをお選びいただき、パーソナルなご予約を作成してください。</p>
+</div>
+<div class="space-y-12">
+<section class="bg-surface-container-low rounded-xl p-8 md:p-12">
+<h2 class="text-3xl text-primary mb-8">カット</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('カット','¥5,500',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">カット</h3><span class="text-secondary font-medium">¥5,500</span></div>
+<p class="text-sm text-on-surface-variant">髪質やライフスタイルに合わせた精密なカット。</p>
+</div>
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('ディレクターカット','¥7,700',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">ディレクターカット</h3><span class="text-secondary font-medium">¥7,700</span></div>
+<p class="text-sm text-on-surface-variant">クリエイティブディレクターが担当するプレミアムなカット。</p>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low rounded-xl p-8 md:p-12">
+<h2 class="text-3xl text-primary mb-8">カラー</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('ルミナスカラー','¥8,800',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">ルミナスカラー</h3><span class="text-secondary font-medium">¥8,800~</span></div>
+<p class="text-sm text-on-surface-variant">シグネチャールミナスグロスを使用したフルカラーチェンジ。</p>
+</div>
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('リタッチ','¥6,600',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">リタッチ</h3><span class="text-secondary font-medium">¥6,600</span></div>
+<p class="text-sm text-on-surface-variant">根元のカラーリング。既存のカラーとシームレスに。</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<section class="bg-surface-container-low rounded-xl p-8">
+<h2 class="text-3xl text-primary mb-8">パーマ</h2>
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('スタンダードパーマ','¥8,800',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">スタンダードパーマ</h3><span class="text-secondary font-medium">¥8,800~</span></div>
+<p class="text-sm text-on-surface-variant">自然な動きとボリュームを生み出します。</p>
+</div>
+</section>
+<section class="bg-surface-container-low rounded-xl p-8">
+<h2 class="text-3xl text-primary mb-8">トリートメント</h2>
+<div class="svc-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer transition-all" onclick="toggleService('ケラチンスパ','¥4,400',this)">
+<div class="flex justify-between mb-3"><h3 class="font-semibold text-lg">ケラチンスパ</h3><span class="text-secondary font-medium">¥4,400~</span></div>
+<p class="text-sm text-on-surface-variant">集中的な補修トリートメント。</p>
+</div>
+</section>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button onclick="goToStep(3)" class="cta-gradient text-white px-12 py-4 rounded-md text-lg flex items-center gap-3 hover:opacity-90 transition-opacity shadow-[0_8px_32px_rgba(51,20,6,0.15)]">
+予約へ進む<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- STEP 3: Date/Time -->
+<div id="step-3" class="step-panel hidden">
+<div class="mb-12">
+<p class="text-xs tracking-[0.15em] text-on-surface-variant uppercase mb-3">Step 3 / 5</p>
+<h1 class="text-4xl md:text-5xl text-primary font-medium tracking-tight">日時の選択</h1>
+<p class="mt-4 text-on-surface-variant max-w-2xl text-lg">ご希望の日時を選択してください。</p>
+</div>
+<div class="bg-surface-container rounded-xl p-6 md:p-10 mb-12">
+<div class="flex items-center justify-between mb-8">
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-primary"><span class="material-symbols-outlined">chevron_left</span></button>
+<h2 class="text-xl font-semibold text-primary">2026年5月</h2>
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="overflow-x-auto pb-4">
+<div class="min-w-[650px]">
+<div class="grid grid-cols-8 gap-3 mb-6">
+<div></div>
+<div class="text-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">月</span><span class="text-lg text-primary">5</span></div>
+<div class="text-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">火</span><span class="text-lg text-primary">6</span></div>
+<div class="text-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">水</span><span class="text-lg text-primary">7</span></div>
+<div class="text-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">木</span><span class="text-lg text-primary">8</span></div>
+<div class="text-center"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">金</span><span class="text-lg text-primary">9</span></div>
+<div class="text-center bg-white rounded-lg py-1"><span class="text-[10px] uppercase tracking-widest text-secondary block">土</span><span class="text-lg text-primary font-bold">10</span></div>
+<div class="text-center opacity-50"><span class="text-[10px] uppercase tracking-widest text-on-surface-variant block">日</span><span class="text-lg text-primary">11</span></div>
+</div>
+<div id="time-grid" class="space-y-3"></div>
+</div>
+</div>
+<div class="mt-6 flex justify-end gap-4 text-sm text-on-surface-variant">
+<span>○ 予約可能</span><span>× 予約不可</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<button onclick="goToStep(2)" class="text-secondary font-medium underline underline-offset-4 hover:text-primary transition-colors">メニュー選択に戻る</button>
+<button onclick="goToStep(4)" class="cta-gradient text-white px-8 h-12 rounded-md font-medium flex items-center gap-2 hover:opacity-90 transition-opacity shadow-[0_8px_32px_rgba(51,20,6,0.15)]">詳細へ進む</button>
+</div>
+</div>
+
+<!-- STEP 4: Customer Info -->
+<div id="step-4" class="step-panel hidden">
+<div class="mb-12">
+<p class="text-xs tracking-[0.15em] text-on-surface-variant uppercase mb-3">Step 4 / 5</p>
+<h1 class="text-4xl text-primary">お客様情報</h1>
+<p class="mt-4 text-on-surface-variant text-lg">ご予約を確定するため、お客様の情報をご入力ください。</p>
+</div>
+<div class="bg-surface-container rounded-xl p-8 md:p-12">
+<div class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div><label class="block text-sm text-on-surface-variant mb-2" for="name_kanji">お名前（漢字）</label>
+<input class="w-full bg-surface-container-high border-0 rounded-lg py-4 px-4 text-on-surface focus:ring-1 focus:ring-outline-variant text-lg" id="name_kanji" placeholder="山田 太郎" type="text"/></div>
+<div><label class="block text-sm text-on-surface-variant mb-2" for="name_kana">お名前（フリガナ）</label>
+<input class="w-full bg-surface-container-high border-0 rounded-lg py-4 px-4 text-on-surface focus:ring-1 focus:ring-outline-variant text-lg" id="name_kana" placeholder="ヤマダ タロウ" type="text"/></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div><label class="block text-sm text-on-surface-variant mb-2" for="phone">電話番号</label>
+<input class="w-full bg-surface-container-high border-0 rounded-lg py-4 px-4 text-on-surface focus:ring-1 focus:ring-outline-variant text-lg" id="phone" placeholder="090-1234-5678" type="tel"/></div>
+<div><label class="block text-sm text-on-surface-variant mb-2" for="email">メールアドレス</label>
+<input class="w-full bg-surface-container-high border-0 rounded-lg py-4 px-4 text-on-surface focus:ring-1 focus:ring-outline-variant text-lg" id="email" placeholder="your@email.com" type="email"/></div>
+</div>
+<div><label class="block text-sm text-on-surface-variant mb-2" for="requests">ご要望（任意）</label>
+<textarea class="w-full bg-surface-container-high border-0 rounded-lg py-4 px-4 text-on-surface focus:ring-1 focus:ring-outline-variant text-lg resize-none" id="requests" rows="4" placeholder="スタイリストへのご要望や特記事項がございましたら、ご記入ください..."></textarea></div>
+<div class="pt-4 flex justify-end">
+<button onclick="goToStep(5)" class="cta-gradient text-white px-12 py-4 rounded-lg text-lg font-medium flex items-center gap-3 hover:opacity-90 transition-opacity">
+予約内容を確認する<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- STEP 5: Confirmation -->
+<div id="step-5" class="step-panel hidden">
+<div class="mb-12 text-center">
+<p class="text-xs tracking-[0.15em] text-secondary uppercase mb-3 font-semibold">Step 5 / 5</p>
+<h1 class="text-4xl text-primary">ご予約内容の確認</h1>
+<p class="mt-4 text-on-surface-variant text-lg">ご予約を確定する前に、内容をご確認ください。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold mb-2">担当スタイリスト</p>
+<h3 class="text-xl text-primary" id="conf-stylist"></h3>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold mb-2">ご予約日時</p>
+<p class="text-lg text-primary" id="conf-date"></p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl mb-6">
+<div class="flex justify-between items-center mb-4">
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">選択されたメニュー</p>
+<button onclick="goToStep(2)" class="text-secondary text-sm font-semibold underline underline-offset-4">変更</button>
+</div>
+<div id="conf-services" class="divide-y divide-outline-variant/20"></div>
+<div class="flex justify-between items-center pt-4 mt-4 border-t border-outline-variant/20">
+<span class="text-xl font-bold text-primary">推定合計金額</span>
+<span class="text-2xl font-bold text-primary" id="conf-total"></span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl mb-8">
+<div class="flex justify-between items-center mb-4">
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">お客様情報</p>
+<button onclick="goToStep(4)" class="text-secondary text-sm font-semibold underline underline-offset-4">変更</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div><span class="text-xs text-on-surface-variant block mb-1">お名前</span><span class="text-primary" id="conf-name"></span></div>
+<div><span class="text-xs text-on-surface-variant block mb-1">お電話番号</span><span class="text-primary" id="conf-phone"></span></div>
+<div class="col-span-2"><span class="text-xs text-on-surface-variant block mb-1">メールアドレス</span><span class="text-primary" id="conf-email"></span></div>
+<div class="col-span-2"><span class="text-xs text-on-surface-variant block mb-1">ご要望</span><p class="text-sm text-primary bg-surface-container-highest p-3 rounded-md mt-1" id="conf-requests"></p></div>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<button onclick="confirmReservation()" class="w-full md:w-auto px-12 py-4 cta-gradient text-white rounded-md uppercase tracking-widest font-semibold hover:opacity-90 transition-all">予約を確定する</button>
+<p class="text-xs text-on-surface-variant mt-4">確定することにより、当店の<a class="underline hover:text-primary" href="#">キャンセルポリシー</a>に同意したものとみなされます。</p>
+</div>
+</div>
+
+</main>
+
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-2xl bg-surface shadow-[0_-8px_30px_rgb(77,40,24,0.04)] z-50 flex justify-around items-center px-4 py-4 pb-8">
+<button onclick="goToStep(1)" class="bnav-item flex flex-col items-center text-[10px] uppercase tracking-widest font-medium px-3 py-2 transition-all"><span class="material-symbols-outlined mb-1 text-xl">person_search</span>スタイリスト</button>
+<button onclick="goToStep(2)" class="bnav-item flex flex-col items-center text-[10px] uppercase tracking-widest font-medium px-3 py-2 transition-all"><span class="material-symbols-outlined mb-1 text-xl">spa</span>メニュー</button>
+<button onclick="goToStep(3)" class="bnav-item flex flex-col items-center text-[10px] uppercase tracking-widest font-medium px-3 py-2 transition-all"><span class="material-symbols-outlined mb-1 text-xl">calendar_today</span>日時</button>
+<button onclick="goToStep(4)" class="bnav-item flex flex-col items-center text-[10px] uppercase tracking-widest font-medium px-3 py-2 transition-all"><span class="material-symbols-outlined mb-1 text-xl">edit_note</span>詳細</button>
+<button onclick="goToStep(5)" class="bnav-item flex flex-col items-center text-[10px] uppercase tracking-widest font-medium px-3 py-2 transition-all"><span class="material-symbols-outlined mb-1 text-xl">verified</span>確認</button>
+</nav>
+
+<script src="reservation.js"></script>
+<script>
+// Generate time grid
+const times=['09:00','09:30','10:00','10:30','11:00','11:30','12:00','14:00','14:30','15:00','15:30','16:00'];
+const days=['5/5(月)','5/6(火)','5/7(水)','5/8(木)','5/9(金)','5/10(土)','5/11(日)'];
+const grid=document.getElementById('time-grid');
+times.forEach(t=>{
+const row=document.createElement('div');
+row.className='grid grid-cols-8 gap-3';
+row.innerHTML=`<div class="text-right pr-2 text-xs text-on-surface-variant pt-3">${t}</div><div class="col-span-7 grid grid-cols-7 gap-3">${days.map((d,i)=>{
+const avail=i!==2&&i!==6;
+return avail?`<button class="time-btn h-10 rounded-md bg-white hover:bg-surface-container-low flex items-center justify-center text-primary transition-colors cursor-pointer" onclick="selectTime('${d}','${t}',this)">○</button>`
+:`<div class="h-10 rounded-md bg-surface-container-highest/50 flex items-center justify-center text-on-surface-variant/40 cursor-not-allowed">×</div>`;
+}).join('')}</div>`;
+grid.appendChild(row);
+});
+</script>
+</body></html>

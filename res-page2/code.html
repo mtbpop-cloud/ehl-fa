@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa - メニュー</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#b28acc",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e6e2df",
+                        "on-tertiary-fixed-variant": "#5a3873",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ff92b2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2c0844",
+                        "on-primary-container": "#c48d78",
+                        "tertiary-container": "#44225c",
+                        "tertiary": "#2d0a46",
+                        "primary-fixed-dim": "#f5b9a2",
+                        "on-surface-variant": "#51443f",
+                        "tertiary-fixed-dim": "#e1b7fc",
+                        "outline": "#84746e",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#815340",
+                        "outline-variant": "#d6c3bc",
+                        "inverse-surface": "#32302e",
+                        "surface-container-high": "#ece7e4",
+                        "surface-variant": "#e6e2df",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb1c5",
+                        "on-primary-fixed": "#321205",
+                        "on-surface": "#1d1b1a",
+                        "primary": "#331406",
+                        "primary-container": "#4d2818",
+                        "background": "#fef8f5",
+                        "inverse-on-surface": "#f5f0ed",
+                        "surface-container-low": "#f8f3f0",
+                        "surface-container": "#f2edea",
+                        "on-primary-fixed-variant": "#663c2b",
+                        "inverse-primary": "#f5b9a2",
+                        "on-secondary-fixed": "#3f001b",
+                        "surface-dim": "#ded9d6",
+                        "on-secondary-fixed-variant": "#7c2846",
+                        "tertiary-fixed": "#f3daff",
+                        "on-secondary-container": "#7a2744",
+                        "surface": "#fef8f5",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-background": "#1d1b1a",
+                        "secondary": "#9a405d",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fef8f5",
+                        "primary-fixed": "#ffdbce",
+                        "secondary-fixed": "#ffd9e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif JP", "serif"],
+                        "display": ["Noto Serif JP", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fef8f5; color: #1d1b1a; }
+        .font-serif { font-family: 'Noto Serif JP', serif; }
+        /* Tonal layering utilities */
+        .layer-base { background-color: #fef8f5; }
+        .layer-section { background-color: #f2edea; }
+        .layer-card { background-color: #ffffff; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fef8f5]/80 dark:bg-stone-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-10 h-24 max-w-full mx-auto">
+<div class="text-2xl font-serif font-semibold text-[#331406] dark:text-stone-50 tracking-tighter scale-98-on-click transition-transform duration-300">
+                ehl:fa
+            </div>
+<!-- Desktop Nav Items -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-[#d6c3bc] dark:text-stone-500 font-medium hover:text-[#9a405d] transition-all duration-500 text-lg tracking-tight font-serif" href="#">スタイリスト</a>
+<a class="text-[#4D2818] dark:text-stone-100 font-bold border-b-2 border-[#4D2818] pb-1 text-lg tracking-tight font-serif" href="#">メニュー</a>
+<a class="text-[#d6c3bc] dark:text-stone-500 font-medium hover:text-[#9a405d] transition-all duration-500 text-lg tracking-tight font-serif" href="#">予約</a>
+<a class="text-[#d6c3bc] dark:text-stone-500 font-medium hover:text-[#9a405d] transition-all duration-500 text-lg tracking-tight font-serif" href="#">詳細</a>
+</div>
+<div class="hidden md:flex items-center text-[#4D2818] dark:text-stone-200 font-serif text-lg tracking-tight hover:text-[#9a405d] transition-all duration-500 cursor-pointer">
+<span>予約確認</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-40 md:pb-20 px-6 max-w-5xl mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="mb-16 flex flex-col items-center justify-center">
+<span class="font-body text-sm text-outline tracking-widest uppercase mb-4">ステップ 2 / 5</span>
+<div class="flex space-x-3">
+<div class="w-12 h-1 rounded-full bg-surface-container-highest"></div>
+<div class="w-12 h-1 rounded-full bg-primary"></div>
+<div class="w-12 h-1 rounded-full bg-surface-container-highest"></div>
+<div class="w-12 h-1 rounded-full bg-surface-container-highest"></div>
+<div class="w-12 h-1 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+<!-- Header -->
+<header class="mb-20 text-center max-w-2xl mx-auto">
+<h1 class="font-serif text-4xl md:text-5xl text-primary mb-6 leading-tight">メニューをお選びください</h1>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">お客様に合わせたメニューをお選びいただき、パーソナルなご予約を作成してください。当店の専門スタッフが、あなただけの特別な時間をご用意いたします。</p>
+</header>
+<!-- Services Grid -->
+<div class="space-y-16">
+<!-- Category: Cut -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Background accent -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-surface-container opacity-50 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center space-x-4 mb-8 relative z-10">
+<span class="material-symbols-outlined text-primary text-3xl font-light" style="font-variation-settings: 'wght' 200;">content_cut</span>
+<h2 class="font-serif text-3xl text-primary">カット</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+<!-- Service Card -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">カット</h3>
+<span class="font-body text-secondary font-medium">¥5,500</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">髪質やライフスタイルに合わせた精密なカット。シグネチャーブローで仕上げます。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+<!-- Service Card -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">ディレクターカット</h3>
+<span class="font-body text-secondary font-medium">¥7,700</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">クリエイティブディレクターが担当するプレミアムなカットメニュー。卓越した技術とビジョンを提供します。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Category: Color -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-12">
+<div class="flex items-center space-x-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl font-light" style="font-variation-settings: 'wght' 200;">palette</span>
+<h2 class="font-serif text-3xl text-primary">カラー</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Service Card -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">ルミナスカラー</h3>
+<span class="font-body text-secondary font-medium">¥8,800~</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">シグネチャールミナスグロスを使用したフルカラーチェンジ。深みのある輝く色合いへ。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+<!-- Service Card -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">リタッチ</h3>
+<span class="font-body text-secondary font-medium">¥6,600</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">根元のカラーリング。伸びた部分を既存のカラーとシームレスになじませます。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Category: Perm & Treatment (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Perm -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-10 flex flex-col">
+<div class="flex items-center space-x-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl font-light" style="font-variation-settings: 'wght' 200;">waves</span>
+<h2 class="font-serif text-3xl text-primary">パーマ</h2>
+</div>
+<div class="flex-grow">
+<!-- Service Card -->
+<label class="cursor-pointer group h-full block">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">スタンダードパーマ</h3>
+<span class="font-body text-secondary font-medium">¥8,800~</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">髪に優しい、持ちの良いパーマ液で、自然な動きとボリュームを生み出します。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Treatment -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-10 flex flex-col">
+<div class="flex items-center space-x-4 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl font-light" style="font-variation-settings: 'wght' 200;">spa</span>
+<h2 class="font-serif text-3xl text-primary">トリートメント</h2>
+</div>
+<div class="flex-grow">
+<!-- Service Card -->
+<label class="cursor-pointer group h-full block">
+<input class="peer sr-only" name="service" type="checkbox"/>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/20 transition-all duration-300 shadow-[0_4px_20px_rgb(51,20,6,0.03)] hover:shadow-[0_8px_30px_rgb(51,20,6,0.06)] h-full flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body font-semibold text-lg text-on-surface">ケラチンスパ</h3>
+<span class="font-body text-secondary font-medium">¥4,400~</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant flex-grow">ダメージを受けた髪に強さと輝きを取り戻す、集中的な補修トリートメント。</p>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">選択</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-20 flex justify-center">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-medium px-12 py-4 rounded-md shadow-[0_8px_32px_rgb(51,20,6,0.15)] hover:shadow-[0_12px_40px_rgb(51,20,6,0.2)] transition-all duration-300 w-full md:w-auto text-lg flex items-center justify-center min-h-[3.5rem]">
+                予約へ進む
+                <span class="material-symbols-outlined ml-3" style="font-variation-settings: 'wght' 300;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 py-6 pb-10 bg-[#fef8f5] dark:bg-stone-900 rounded-t-[2rem] shadow-[0_-8px_30px_rgb(77,40,24,0.04)]">
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1">person_search</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">スタイリスト</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#4D2818] dark:bg-stone-100 text-[#fef8f5] dark:text-[#331406] rounded-full px-5 py-2.5 scale-95 duration-150 ease-out">
+<span class="material-symbols-outlined mb-1">spa</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">メニュー</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">予約</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] dark:hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1">edit_note</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">詳細</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa | 美と向き合う、特別な時間</title>
+<meta name="description" content="ehl:fa（エルファ）は、洗練されたカット・カラー・トリートメントで、あなたの美しさを最大限に引き出す美容室です。"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#fef8f5",
+        "surface-container": "#f2edea",
+        "surface-container-low": "#f8f3f0",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#ece7e4",
+        "surface-container-highest": "#e6e2df",
+        "surface-dim": "#ded9d6",
+        "primary": "#331406",
+        "primary-container": "#4d2818",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#c48d78",
+        "secondary": "#9a405d",
+        "secondary-container": "#ff92b2",
+        "on-surface": "#1d1b1a",
+        "on-surface-variant": "#51443f",
+        "on-background": "#1d1b1a",
+        "outline": "#84746e",
+        "outline-variant": "#d6c3bc",
+        "error": "#ba1a1a",
+      },
+      fontFamily: {
+        "headline": ["Noto Serif JP", "serif"],
+        "body": ["Inter", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  body {
+    font-family: 'Inter', 'Noto Serif JP', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Noto Serif JP', serif;
+  }
+  .hero-gradient {
+    background: linear-gradient(180deg, transparent 0%, rgba(51,20,6,0.15) 40%, rgba(51,20,6,0.55) 100%);
+  }
+  .cta-gradient {
+    background: linear-gradient(135deg, #331406 0%, #4d2818 100%);
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .service-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(51,20,6,0.08);
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- Navigation -->
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-[#fef8f5]/80 backdrop-blur-xl transition-all duration-500">
+  <div class="flex justify-between items-center px-6 md:px-10 py-5 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="font-headline text-2xl font-bold tracking-tighter text-primary">ehl:fa</a>
+    <div class="hidden md:flex items-center gap-8 font-headline text-base tracking-wide">
+      <a class="text-primary/70 hover:text-primary transition-colors duration-300" href="#services">サービス</a>
+      <a class="text-primary/70 hover:text-primary transition-colors duration-300" href="#stylists">スタイリスト</a>
+      <a class="text-primary/70 hover:text-primary transition-colors duration-300" href="#treatment">トリートメント</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="reservation.html" class="hidden md:inline-flex items-center gap-2 cta-gradient text-white px-6 py-2.5 rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
+        ご予約はこちら
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden text-primary">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl px-6 pb-6">
+    <a class="block py-3 text-primary font-headline text-lg" href="#services">サービス</a>
+    <a class="block py-3 text-primary font-headline text-lg" href="#stylists">スタイリスト</a>
+    <a class="block py-3 text-primary font-headline text-lg" href="#treatment">トリートメント</a>
+    <a href="reservation.html" class="block mt-4 text-center cta-gradient text-white px-6 py-3 rounded-md font-medium">ご予約はこちら</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="relative w-full h-[85vh] min-h-[600px] overflow-hidden">
+  <img src="images/salon-hero.png" alt="ehl:fa サロン内装" class="absolute inset-0 w-full h-full object-cover"/>
+  <div class="hero-gradient absolute inset-0"></div>
+  <div class="relative z-10 h-full flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 max-w-screen-xl mx-auto">
+    <div class="fade-in">
+      <p class="text-white/70 text-xs uppercase tracking-[0.3em] font-medium mb-4">Beauty Sanctuary</p>
+      <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight mb-6 max-w-3xl">
+        心ゆくまで、<br/>美しさと向き合う時間を。
+      </h1>
+      <p class="text-white/80 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+        お客様一人ひとりの個性に寄り添い、洗練された技術で理想のスタイルを実現します。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="reservation.html" class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-md text-base font-medium hover:bg-white/90 transition-all shadow-[0_8px_32px_rgba(51,20,6,0.2)]">
+          オンライン予約
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+        <a href="tel:0312345678" class="inline-flex items-center justify-center gap-2 border border-white/40 text-white px-8 py-4 rounded-md text-base font-medium hover:bg-white/10 transition-all">
+          <span class="material-symbols-outlined text-lg">call</span>
+          03-1234-5678
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-20 md:py-32 px-6 md:px-10 max-w-screen-xl mx-auto">
+  <div class="fade-in text-center mb-16 md:mb-24">
+    <p class="text-xs uppercase tracking-[0.3em] font-medium text-secondary mb-4">Our Services</p>
+    <h2 class="text-3xl md:text-5xl font-headline text-primary mb-6">サービス</h2>
+    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+      お客様の髪質やライフスタイルに合わせ、最適なメニューをご提案いたします。
+    </p>
+  </div>
+
+  <!-- Cut Section -->
+  <div class="fade-in mb-20 md:mb-32">
+    <div class="flex items-center gap-4 mb-10">
+      <h3 class="text-2xl md:text-3xl font-headline text-primary">カット</h3>
+      <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div class="service-card bg-surface-container-lowest p-8 rounded-xl">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="text-xl font-bold text-primary">シグネチャー デザイナーカット</h4>
+          <span class="text-primary font-medium whitespace-nowrap ml-4">¥8,800</span>
+        </div>
+        <p class="text-on-surface-variant mb-6 text-sm leading-relaxed">カウンセリング、シャンプー、ブローを含みます。骨格やライフスタイルに合わせ、魅力を最大限に引き出します。</p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">schedule</span> 60 分
+          </span>
+          <a href="reservation.html" class="px-6 py-2.5 cta-gradient text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">予約する</a>
+        </div>
+      </div>
+      <div class="service-card bg-surface-container-lowest p-8 rounded-xl">
+        <div class="flex justify-between items-start mb-4">
+          <h4 class="text-xl font-bold text-primary">ディレクター アートカット</h4>
+          <span class="text-primary font-medium whitespace-nowrap ml-4">¥11,000</span>
+        </div>
+        <p class="text-on-surface-variant mb-6 text-sm leading-relaxed">サロンディレクターが担当。洗練されたシルエットと再現性の高さを追求した、高度な彫刻的カット技術です。</p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">schedule</span> 75 分
+          </span>
+          <a href="reservation.html" class="px-6 py-2.5 cta-gradient text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">予約する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Section -->
+  <div class="fade-in mb-20 md:mb-32">
+    <div class="flex items-center gap-4 mb-10">
+      <h3 class="text-2xl md:text-3xl font-headline text-primary">カラー</h3>
+      <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+    </div>
+    <div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden">
+      <div class="md:w-1/3 h-56 md:h-auto">
+        <img src="images/hair-coloring.png" alt="ヘアカラーリング" class="w-full h-full object-cover"/>
+      </div>
+      <div class="p-8 md:w-2/3 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="text-2xl font-headline text-primary">ルミナス フルカラー</h4>
+            <span class="text-xl font-medium text-primary ml-4">¥13,200</span>
+          </div>
+          <p class="text-on-surface-variant mb-6 leading-relaxed">シルクプロテイン配合のオーガニック染料を使用。深い艶と潤いを与えながら、品のある色味を実現します。白髪染めも対応可能です。</p>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">schedule</span> 120 分
+          </span>
+          <a href="reservation.html" class="px-8 py-3 cta-gradient text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">予約する</a>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div class="service-card bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between">
+        <div>
+          <h4 class="text-lg font-bold text-primary mb-2">ポイントハイライト</h4>
+          <p class="text-on-surface-variant text-sm mb-6">顔周りやトップに立体感を出し、表情を明るく華やかに見せるデザインカラーです。</p>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-primary font-medium">¥16,500</span>
+          <a href="reservation.html" class="text-secondary font-semibold text-sm underline underline-offset-4 decoration-1 hover:text-primary transition-colors">予約する</a>
+        </div>
+      </div>
+      <div class="service-card bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between">
+        <div>
+          <h4 class="text-lg font-bold text-primary mb-2">リタッチカラー</h4>
+          <p class="text-on-surface-variant text-sm mb-6">根元3cmまでのメンテナンス。毛先の退色に合わせて色味を整えます。</p>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-primary font-medium">¥7,700</span>
+          <a href="reservation.html" class="text-secondary font-semibold text-sm underline underline-offset-4 decoration-1 hover:text-primary transition-colors">予約する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stylists Section -->
+<section id="stylists" class="bg-surface-container py-20 md:py-32 px-6 md:px-10">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="fade-in text-center mb-16 md:mb-24">
+      <p class="text-xs uppercase tracking-[0.3em] font-medium text-secondary mb-4">Our Stylists</p>
+      <h2 class="text-3xl md:text-5xl font-headline text-primary mb-6">スタイリスト</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+        経験豊富なプロフェッショナルが、あなたの理想のスタイルを創り上げます。
+      </p>
+    </div>
+    <div class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Stylist 1 -->
+      <div class="group">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-5 bg-surface-container-low">
+          <img src="images/stylist-elena.png" alt="桂 エレナ" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-secondary font-medium mb-1">ディレクター</p>
+        <h4 class="text-xl font-headline text-primary mb-2">桂 エレナ</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">洗練されたカラーと精密なカットを得意とし、20年以上のキャリアで培った技術を提供。</p>
+      </div>
+      <!-- Stylist 2 -->
+      <div class="group">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-5 bg-surface-container-low">
+          <img src="images/stylist-seiya.png" alt="松本 聖也" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-secondary font-medium mb-1">トップスタイリスト</p>
+        <h4 class="text-xl font-headline text-primary mb-2">松本 聖也</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">構築的なスタイルとモダンなメンズグルーミングのスペシャリスト。</p>
+      </div>
+      <!-- Stylist 3 -->
+      <div class="group">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-5 bg-surface-container-low">
+          <img src="images/stylist-shizuka.png" alt="岡田 志津香" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-secondary font-medium mb-1">トップスタイリスト</p>
+        <h4 class="text-xl font-headline text-primary mb-2">岡田 志津香</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">オーガニックな質感作りと修復トリートメントのエキスパート。</p>
+      </div>
+      <!-- Stylist 4 -->
+      <div class="group">
+        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-5 bg-surface-container-low">
+          <img src="images/stylist-nozomi.png" alt="藤井 希" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-secondary font-medium mb-1">スタイリスト</p>
+        <h4 class="text-xl font-headline text-primary mb-2">藤井 希</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">日常のエレガンスに新鮮な視点をもたらす、直感的なスタイリング。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Treatment Section -->
+<section id="treatment" class="py-20 md:py-32 px-6 md:px-10 max-w-screen-xl mx-auto">
+  <div class="fade-in">
+    <div class="flex items-center gap-4 mb-10">
+      <h3 class="text-2xl md:text-3xl font-headline text-primary">トリートメント</h3>
+      <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+    </div>
+    <div class="bg-surface-container p-8 md:p-12 rounded-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">おすすめ</p>
+          <h4 class="text-3xl font-headline text-primary mb-6">ケラチン復元スパ</h4>
+          <p class="text-on-surface-variant leading-loose mb-8">
+            当サロン最高峰のケアメニュー。5段階の工程で毛髪内部を再構築し、弾力のある艶やかな質感を取り戻します。エイジングケアやダメージが気になる方に。
+          </p>
+          <div class="flex items-baseline gap-4 mb-8">
+            <span class="text-4xl font-headline text-primary">¥9,900</span>
+            <span class="text-on-surface-variant text-sm">/ 45 分</span>
+          </div>
+          <a href="reservation.html" class="inline-flex items-center gap-2 px-10 py-4 cta-gradient text-white rounded-md font-medium tracking-wide hover:opacity-90 transition-opacity">
+            予約する
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg">
+            <h4 class="font-bold text-primary mb-1">炭酸スカルプクレンジング</h4>
+            <p class="text-xs text-on-surface-variant">¥3,300 • 15 分</p>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg">
+            <h4 class="font-bold text-primary mb-1">高保湿マスクセラピー</h4>
+            <p class="text-xs text-on-surface-variant">¥5,500 • 20 分</p>
+          </div>
+          <div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg">
+            <h4 class="font-bold text-primary mb-1">UVプロテクションコーティング</h4>
+            <p class="text-xs text-on-surface-variant">¥2,200 • 10 分</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="bg-primary py-16 md:py-24 px-6">
+  <div class="max-w-screen-md mx-auto text-center fade-in">
+    <h2 class="text-3xl md:text-4xl font-headline text-white mb-6">あなただけの特別な時間を</h2>
+    <p class="text-white/70 text-lg mb-10 leading-relaxed">オンラインで簡単にご予約いただけます。<br class="hidden sm:block"/>経験豊かなスタイリストが、心を込めておもてなしいたします。</p>
+    <a href="reservation.html" class="inline-flex items-center gap-2 bg-white text-primary px-10 py-4 rounded-md text-lg font-medium hover:bg-white/90 transition-all shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+      オンライン予約
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container py-16 px-6 md:px-10">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <h3 class="font-headline text-2xl font-bold text-primary mb-4">ehl:fa</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">洗練された空間で、あなたの美しさを最大限に引き出す美容室。</p>
+      </div>
+      <div>
+        <h4 class="font-headline text-sm uppercase tracking-widest text-primary/60 mb-4">サロン情報</h4>
+        <div class="space-y-3 text-sm text-on-surface-variant">
+          <p>〒150-0001 東京都渋谷区神宮前 0-0-0</p>
+          <p>TEL: 03-1234-5678</p>
+          <p>営業時間: 10:00 - 20:00（火曜定休）</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-headline text-sm uppercase tracking-widest text-primary/60 mb-4">リンク</h4>
+        <div class="space-y-3 text-sm">
+          <a href="#services" class="block text-on-surface-variant hover:text-primary transition-colors">サービス</a>
+          <a href="#stylists" class="block text-on-surface-variant hover:text-primary transition-colors">スタイリスト</a>
+          <a href="reservation.html" class="block text-on-surface-variant hover:text-primary transition-colors">ご予約</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-8 text-center">
+      <p class="text-xs text-on-surface-variant/60">&copy; 2026 ehl:fa All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom CTA -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(51,20,6,0.08)] px-4 py-3 pb-6">
+  <a href="reservation.html" class="flex items-center justify-center gap-2 w-full cta-gradient text-white py-3.5 rounded-md font-medium">
+    オンライン予約
+    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+  </a>
+</div>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+});
+
+// Scroll fade-in animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Trigger hero fade-in immediately
+window.addEventListener('load', () => {
+  document.querySelector('#hero .fade-in').classList.add('visible');
+});
+</script>
+</body>
+</html>

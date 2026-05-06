@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa - スタイリストを選択</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-tertiary-container": "#b28acc",
+                            "on-secondary": "#ffffff",
+                            "surface-container-highest": "#e6e2df",
+                            "on-tertiary-fixed-variant": "#5a3873",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-container": "#ff92b2",
+                            "on-error": "#ffffff",
+                            "on-tertiary-fixed": "#2c0844",
+                            "on-primary-container": "#c48d78",
+                            "tertiary-container": "#44225c",
+                            "tertiary": "#2d0a46",
+                            "primary-fixed-dim": "#f5b9a2",
+                            "on-surface-variant": "#51443f",
+                            "tertiary-fixed-dim": "#e1b7fc",
+                            "outline": "#84746e",
+                            "on-tertiary": "#ffffff",
+                            "surface-tint": "#815340",
+                            "outline-variant": "#d6c3bc",
+                            "inverse-surface": "#32302e",
+                            "surface-container-high": "#ece7e4",
+                            "surface-variant": "#e6e2df",
+                            "on-primary": "#ffffff",
+                            "secondary-fixed-dim": "#ffb1c5",
+                            "on-primary-fixed": "#321205",
+                            "on-surface": "#1d1b1a",
+                            "primary": "#331406",
+                            "primary-container": "#4d2818",
+                            "background": "#fef8f5",
+                            "inverse-on-surface": "#f5f0ed",
+                            "surface-container-low": "#f8f3f0",
+                            "surface-container": "#f2edea",
+                            "on-primary-fixed-variant": "#663c2b",
+                            "inverse-primary": "#f5b9a2",
+                            "on-secondary-fixed": "#3f001b",
+                            "surface-dim": "#ded9d6",
+                            "on-secondary-fixed-variant": "#7c2846",
+                            "tertiary-fixed": "#f3daff",
+                            "on-secondary-container": "#7a2744",
+                            "surface": "#fef8f5",
+                            "error-container": "#ffdad6",
+                            "error": "#ba1a1a",
+                            "on-background": "#1d1b1a",
+                            "secondary": "#9a405d",
+                            "on-error-container": "#93000a",
+                            "surface-bright": "#fef8f5",
+                            "primary-fixed": "#ffdbce",
+                            "secondary-fixed": "#ffd9e1"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "16": "5.5rem",
+                        "4": "1.4rem"
+                    },
+                    "fontFamily": {
+                            "headline": [
+                                    "Noto Serif JP", "serif"
+                            ],
+                            "display": [
+                                    "Noto Serif JP", "serif"
+                            ],
+                            "body": [
+                                    "Inter", "sans-serif"
+                            ],
+                            "label": [
+                                    "Inter", "sans-serif"
+                            ]
+                    },
+                    "fontSize": {}
+            },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#fef8f5]/80 dark:bg-stone-900/80 backdrop-blur-xl border-none">
+<div class="flex justify-between items-center px-10 h-24 max-w-full mx-auto">
+<div class="text-2xl font-headline font-semibold text-[#331406] tracking-tighter">
+                ehl:fa
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#4D2818] font-bold border-b-2 border-[#4D2818] pb-1 font-body text-sm uppercase tracking-widest transition-all duration-500 hover:text-[#9a405d]" href="#">スタイリスト</a>
+<a class="text-[#d6c3bc] font-medium font-body text-sm uppercase tracking-widest transition-all duration-500 hover:text-[#9a405d]" href="#">メニュー</a>
+<a class="text-[#d6c3bc] font-medium font-body text-sm uppercase tracking-widest transition-all duration-500 hover:text-[#9a405d]" href="#">日時</a>
+<a class="text-[#d6c3bc] font-medium font-body text-sm uppercase tracking-widest transition-all duration-500 hover:text-[#9a405d]" href="#">詳細</a>
+<a class="text-[#d6c3bc] font-medium font-body text-sm uppercase tracking-widest transition-all duration-500 hover:text-[#9a405d]" href="#">確認</a>
+</nav>
+<button class="hidden md:flex items-center gap-2 text-[#4D2818] font-headline text-lg tracking-tight hover:text-[#9a405d] transition-all duration-500 scale-98-on-click transition-transform duration-300">
+<span>予約確認</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-32 md:pb-16 px-6 md:px-10 max-w-5xl mx-auto w-full">
+<!-- Step Indicator & Header -->
+<div class="mb-16 text-center md:text-left">
+<p class="font-label text-xs tracking-[0.15em] text-on-surface-variant uppercase mb-4">Step 1 of 5</p>
+<h1 class="font-display text-4xl md:text-5xl text-primary font-medium tracking-tight">スタイリストを選択</h1>
+<p class="mt-4 font-body text-on-surface-variant max-w-2xl text-lg">当サロンのプロフェッショナルをお選びください。それぞれの専門性を活かし、あなたの理想のスタイルを創り上げます。</p>
+</div>
+<!-- Stylists Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+<!-- Stylist Card 1 -->
+<label class="group cursor-pointer relative block">
+<input class="peer sr-only" name="stylist" type="radio"/>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 peer-checked:ring-2 peer-checked:ring-primary peer-checked:bg-surface-container group-hover:bg-surface-container-low shadow-[0_4px_20px_rgb(51,20,6,0.05)] h-full flex flex-col">
+<div class="aspect-[4/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Portrait of Elena Katsura, Director Stylist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A refined, high-fashion portrait of an elegant Japanese woman in her 40s, acting as a salon director. She is styled in sophisticated minimalist clothing against a soft, warm neutral background that aligns with the 'surface' hex color #fef8f5. The lighting is soft and flattering, creating a luxurious editorial aesthetic typical of high-end lifestyle magazines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3uldpbPgAFwFRjRix_qBrsy9ecZjy2rEhWaE96lH732rn6JxDFw1EiqRajFAAEIwvfV_4_arYw3fvmBfQPgt7gGMv67AnZ08tzXh_OzrA7zU7eAaZEBARQHWCclp-JwXxTZeH8AgwdtDvGttc5WuNNM7fXy6IQgJvoRrOvVTqX1Uq8m_2iusarWV5P5YdasW8F6Xk_zAHteDWrvpWTKNg1ezv-MYG1S6a_FlTC7reYnpjY5rdvYSTEVi9OrhSylBxxo8j-DVtP0LU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-label text-xs tracking-widest text-primary mb-2 uppercase">ディレクター</p>
+<h3 class="font-headline text-2xl text-primary mb-2">桂 エレナ</h3>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2">洗練されたカラーと精密なカットを得意としています。20年以上にわたり、こだわりを持つお客様に一人ひとりに合わせたスタイルを提案し続けています。</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-secondary text-sm underline underline-offset-4 decoration-1">ポートフォリオを見る</span>
+<span class="material-symbols-outlined text-outline-variant peer-checked:text-primary transition-colors">check_circle</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Stylist Card 2 -->
+<label class="group cursor-pointer relative block">
+<input class="peer sr-only" name="stylist" type="radio"/>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 peer-checked:ring-2 peer-checked:ring-primary peer-checked:bg-surface-container group-hover:bg-surface-container-low shadow-[0_4px_20px_rgb(51,20,6,0.05)] h-full flex flex-col">
+<div class="aspect-[4/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Portrait of Seiya Matsumoto, Top Stylist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional portrait of a stylish Japanese man in his late 30s, working as a top hair stylist. He wears a dark, modern textured shirt. The background is a soft, warm beige (similar to #fef8f5). The lighting is cinematic yet soft, highlighting his professional demeanor and creative edge, fitting a luxury editorial look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArMHYGjP_4rtmVYjf9Wk0IGjCVAtOVS3gxVXumScPQHG7wkMqMUtvgAaAkUATByuFSWrD9PoVpV5URlrLP6qwiLyWqqw01yVmo6rGvFg29Mmu20-WNKLSZc75GKSUQDD7MbLwW1Hg97v5Q1QFb92fdhIeboPUC-C95VWSCE0IX7oVcwPoNTtpFJuqxcsm9xF7xMiHbLbbobKOkbI-QxEvXbtaiBN4QnjYHecSbs51S5AgdFmJvEjjgbBwGpc_gSkXRjLIMz5QsJyv_"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-label text-xs tracking-widest text-primary mb-2 uppercase">トップスタイリスト</p>
+<h3 class="font-headline text-2xl text-primary mb-2">松本 聖也</h3>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2">構築的なスタイルとモダンなメンズグルーミングのスペシャリスト。伝統的な技術に現代的なセンスを融合させます。</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-secondary text-sm underline underline-offset-4 decoration-1">ポートフォリオを見る</span>
+<span class="material-symbols-outlined text-outline-variant peer-checked:text-primary transition-colors">check_circle</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Stylist Card 3 -->
+<label class="group cursor-pointer relative block">
+<input class="peer sr-only" name="stylist" type="radio"/>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 peer-checked:ring-2 peer-checked:ring-primary peer-checked:bg-surface-container group-hover:bg-surface-container-low shadow-[0_4px_20px_rgb(51,20,6,0.05)] h-full flex flex-col">
+<div class="aspect-[4/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Portrait of Shizuka Okada, Top Stylist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A warm, inviting portrait of a Japanese woman in her 40s, a top hair stylist. She has an elegant, approachable smile and wears chic, understated clothing. The setting features a soft, light background (#fef8f5) with gentle natural lighting that conveys trust, professionalism, and a sophisticated sanctuary atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPaKr0pqktkPiYb2LnHQurokw22I8pRN8pB_6n5qSkbmXKLjzn9hkx-IUkLuthLyHLftQLzQ6xDblm7N9jZx7Pkopjf6ogqVsshxRCg1g8S_ii-MbeeZA2oqru05FtbxLitenSky-JWNj20jSQhJ5muvvR4-NX3qXhlBeiM3ViAaDM-iD_nXIjBoTPaIyqkdBk6TwiazHRSpTtPnusB1q-EJdWT3BF_zrXdmCO-jt2uJECPVmw47L8UEDn460eT5d719SOXg5Sowy"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-label text-xs tracking-widest text-primary mb-2 uppercase">トップスタイリスト</p>
+<h3 class="font-headline text-2xl text-primary mb-2">岡田 志津香</h3>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2">オーガニックな質感作りと修復トリートメントのエキスパート。優しくホリスティックなアプローチで、本来の美しさを引き出します。</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-secondary text-sm underline underline-offset-4 decoration-1">ポートフォリオを見る</span>
+<span class="material-symbols-outlined text-outline-variant peer-checked:text-primary transition-colors">check_circle</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Stylist Card 4 -->
+<label class="group cursor-pointer relative block">
+<input class="peer sr-only" name="stylist" type="radio"/>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 peer-checked:ring-2 peer-checked:ring-primary peer-checked:bg-surface-container group-hover:bg-surface-container-low shadow-[0_4px_20px_rgb(51,20,6,0.05)] h-full flex flex-col">
+<div class="aspect-[4/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Portrait of Nozomi Fujii, Stylist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A fresh, vibrant portrait of a young Japanese woman, a rising stylist, with a creative and modern look. She is photographed against a pristine, warm surface background (#fef8f5) with crisp, high-key lighting. The image feels energetic yet refined, fitting seamlessly into a high-end digital atelier design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASdH4CTHV-FCyHJNvqjRbDb6P-VbyKz8BgbKbwCArvoYvXSSi3kOjHx2l_C_cIazHqr9NJEgMemy-D133q9UXF7Z791kKobPCSfzVoTBFhGIbc9Il6h2mUTsD3Zgem_hQOf-OCa2MX5u0LEVhXSL9Kot8jvGBFDzMm8jWjhL5gROTjIyBh1veucl6y5Y5G1yGpvP1iCay-79UT7Km5-X0K7GjZTAVW4qM9H2Xq8FNUt34Rz3ahEkkUc2d6NBioGnKWFQts4Mdyw9n8"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-label text-xs tracking-widest text-primary mb-2 uppercase">スタイリスト</p>
+<h3 class="font-headline text-2xl text-primary mb-2">藤井 希</h3>
+<p class="font-body text-sm text-on-surface-variant line-clamp-2">日常のエレガンスに新鮮な視点をもたらします。直感的なスタイリングと細部へのこだわりが評価されています。</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-secondary text-sm underline underline-offset-4 decoration-1">ポートフォリオを見る</span>
+<span class="material-symbols-outlined text-outline-variant peer-checked:text-primary transition-colors">check_circle</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+<!-- Action Area -->
+<div class="mt-16 flex justify-end">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary h-14 px-10 rounded-md font-body text-sm uppercase tracking-widest hover:opacity-90 transition-opacity shadow-[0_8px_32px_rgba(51,20,6,0.15)] flex items-center gap-3">
+<span>メニューへ進む</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-[2rem] bg-[#fef8f5] dark:bg-stone-900 shadow-[0_-8px_30px_rgb(77,40,24,0.04)] z-50 flex justify-around items-center px-8 py-6 pb-10 border-none">
+<div class="flex flex-col items-center justify-center bg-[#4D2818] dark:bg-stone-100 text-[#fef8f5] dark:text-[#331406] rounded-full px-5 py-2.5 transition-transform duration-150 ease-out scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person_search</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium">スタイリスト</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">spa</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium">メニュー</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium">日時</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium">詳細</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#d6c3bc] dark:text-stone-600 px-4 py-2 hover:text-[#9a405d] transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">verified</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium">確認</span>
+</div>
+</nav>
+</body></html>

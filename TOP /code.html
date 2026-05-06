@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehlfa | メニューを選択</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface": "#f5f0ed",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#fef8f5",
+            "tertiary-fixed-dim": "#e1b7fc",
+            "surface": "#fef8f5",
+            "on-error": "#ffffff",
+            "secondary-container": "#ff92b2",
+            "secondary-fixed": "#ffd9e1",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e6e2df",
+            "on-surface-variant": "#51443f",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#815340",
+            "tertiary-fixed": "#f3daff",
+            "on-secondary-fixed-variant": "#7c2846",
+            "tertiary-container": "#44225c",
+            "surface-variant": "#e6e2df",
+            "error-container": "#ffdad6",
+            "on-surface": "#1d1b1a",
+            "primary-container": "#4d2818",
+            "on-secondary-container": "#7a2744",
+            "surface-bright": "#fef8f5",
+            "primary-fixed": "#ffdbce",
+            "on-tertiary-fixed-variant": "#5a3873",
+            "on-primary-container": "#c48d78",
+            "on-secondary-fixed": "#3f001b",
+            "secondary": "#9a405d",
+            "primary": "#331406",
+            "inverse-primary": "#f5b9a2",
+            "on-primary-fixed-variant": "#663c2b",
+            "surface-container-high": "#ece7e4",
+            "surface-container-low": "#f8f3f0",
+            "tertiary": "#2d0a46",
+            "surface-container": "#f2edea",
+            "secondary-fixed-dim": "#ffb1c5",
+            "outline": "#84746e",
+            "on-background": "#1d1b1a",
+            "outline-variant": "#d6c3bc",
+            "inverse-surface": "#32302e",
+            "primary-fixed-dim": "#f5b9a2",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#2c0844",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#321205",
+            "surface-dim": "#ded9d6",
+            "on-tertiary-container": "#b28acc"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif JP", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #d6c3bc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#fef8f5]/80 dark:bg-[#1d1b1a]/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl font-bold tracking-tighter text-[#331406] dark:text-[#fef8f5]">ehlfa</div>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-8 font-serif text-lg tracking-wide">
+<a class="text-[#331406] dark:text-[#fef8f5] border-b-2 border-[#331406] pb-1 hover:text-[#331406] transition-colors duration-300" href="#">サービス</a>
+<a class="text-[#4d2818]/70 dark:text-[#fef8f5]/60 hover:text-[#331406] transition-colors duration-300" href="#">スタイリスト</a>
+<a class="text-[#4d2818]/70 dark:text-[#fef8f5]/60 hover:text-[#331406] transition-colors duration-300" href="#">予約確認</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden md:block text-[#331406] font-medium tracking-wide">お電話はこちら</button>
+<span class="material-symbols-outlined text-[#331406] dark:text-[#fef8f5] cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-screen-xl mx-auto">
+<!-- Step Indicator & Header -->
+<header class="mb-16 text-center">
+<div class="inline-flex items-center justify-center gap-4 mb-6">
+<span class="w-8 h-[1px] bg-primary/30"></span>
+<span class="text-xs uppercase tracking-[0.3em] font-medium text-secondary">ステップ 1 / 4</span>
+<span class="w-8 h-[1px] bg-primary/30"></span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">メニューを選択</h1>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+        お客様一人ひとりの髪質やスタイルに合わせ、最適なトリートメントと技術をご提案いたします。
+      </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sticky Navigation Side (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-32 h-fit">
+<nav class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/50 mb-8">カテゴリー</h3>
+<ul class="space-y-4">
+<li><a class="group flex items-center gap-4 text-primary font-serif text-xl" href="#cut"><span class="w-2 h-2 rounded-full bg-primary opacity-100"></span>カット</a></li>
+<li><a class="group flex items-center gap-4 text-primary/60 hover:text-primary font-serif text-xl transition-all" href="#color"><span class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></span>カラー</a></li>
+<li><a class="group flex items-center gap-4 text-primary/60 hover:text-primary font-serif text-xl transition-all" href="#perm"><span class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></span>パーマ</a></li>
+<li><a class="group flex items-center gap-4 text-primary/60 hover:text-primary font-serif text-xl transition-all" href="#treatment"><span class="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></span>トリートメント</a></li>
+</ul>
+</nav>
+</aside>
+<!-- Services Content -->
+<div class="lg:col-span-9 space-y-24">
+<!-- Luxury Hero Image (Asymmetric Placement) -->
+<div class="relative w-full aspect-[21/9] rounded-xl overflow-hidden shadow-2xl mb-24">
+<img alt="Luxury salon interior" class="w-full h-full object-cover" data-alt="Luxurious hair salon interior with soft warm lighting, designer minimalist furniture, large mirrors, and cream-colored aesthetic walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-w7-hRWKd9anAfXoKC3pPUwmI71t7V-AX_5NBic8SsDmNpHrvc6Vd5Qwl2TrIHdCECdyA-Wit-q8uPsIArUJp0UioHzgQoumxpmkHwpS3uN6d8ZuNBjWWJoHfiolzGljJyk1LeSzqkZ1dAMM_wcIXaqUA3WzZefK2gbxtPT-SYOdCI-Er90J7Z4M23zKuQqIVg03dutyMOZdFNLxWT6zio4dvl9_cVKNJr-4amugL_8_WMWTAkwbTwwUIKs_Z83bJtfcRyEEHYyk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<h2 class="text-3xl font-serif">心ゆくまで、美しさと向き合う時間を。</h2>
+</div>
+</div>
+<!-- Cut Section -->
+<section class="scroll-mt-32" id="cut">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-3xl font-serif text-primary">カット</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Cut Service Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold font-serif text-primary">シグネチャー デザイナーカット</h3>
+<span class="text-primary font-medium">¥8,800</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">カウンセリング、シャンプー、ブローを含みます。骨格やライフスタイルに合わせ、魅力を最大限に引き出します。</p>
+<div class="flex justify-between items-center">
+<span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 60 分
+                </span>
+<button class="px-8 py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">選択する</button>
+</div>
+</div>
+<!-- Cut Service Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold font-serif text-primary">ディレクター アートカット</h3>
+<span class="text-primary font-medium">¥11,000</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-sm leading-relaxed">サロンディレクターが担当。洗練されたシルエットと再現性の高さを追求した、高度な彫刻的カット技術です。</p>
+<div class="flex justify-between items-center">
+<span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 75 分
+                </span>
+<button class="px-8 py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">選択する</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Color Section -->
+<section class="scroll-mt-32" id="color">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-3xl font-serif text-primary">カラー</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Featured Color Service -->
+<div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/10">
+<div class="md:w-1/3 h-48 md:h-auto">
+<img alt="Hair coloring process" class="w-full h-full object-cover" data-alt="Close up of professional hair color application with subtle highlights in a luxury salon setting, soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtsLFf6Xxf95hqO2NiHtBLUwiY8_DkTAGMsMvOoWSntSrwBMtArezjkJHHHh_t6iUQFaCXME2s95QKsseVoO3moOHo0o6eZKtWEYshF25uOjGO1kT0Cle1lIkulDKm_EqbNGul9Oo_GljPCk-TLMyQqNiXV9yxt_vJ99jtNLxFeM3CLzwjEiel8-QytQznNZ0ZkZp4pGqIIUZEn2nUZDRKC0aTgVwUVm9jPiJxSh4olPU5_ZeB8KPKNAYsaC0YynPXjcGBjJcKZgWd"/>
+</div>
+<div class="p-8 md:w-2/3 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-2xl font-serif text-primary">ルミナス フルカラー</h3>
+<span class="text-xl font-medium text-primary">¥13,200</span>
+</div>
+<p class="text-on-surface-variant mb-6 leading-relaxed">シルクプロテイン配合のオーガニック染料を使用。深い艶と潤いを与えながら、品のある色味を実現します。白髪染めも対応可能です。</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs uppercase tracking-wider text-outline font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 120 分
+                  </span>
+<button class="px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-md text-sm font-medium hover:opacity-90 transition-all">選択する</button>
+</div>
+</div>
+</div>
+<!-- More Color Options -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold font-serif text-primary mb-2">ポイントハイライト</h3>
+<p class="text-on-surface-variant text-sm mb-6">顔周りやトップに立体感を出し、表情を明るく華やかに見せるデザインカラーです。</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-primary font-medium">¥16,500</span>
+<button class="text-secondary font-semibold text-sm border-b border-secondary/30 pb-1 hover:border-secondary transition-all">選択する</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold font-serif text-primary mb-2">リタッチカラー</h3>
+<p class="text-on-surface-variant text-sm mb-6">根元3cmまでのメンテナンス。毛先の退色に合わせて色味を整えます。</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-primary font-medium">¥7,700</span>
+<button class="text-secondary font-semibold text-sm border-b border-secondary/30 pb-1 hover:border-secondary transition-all">選択する</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Treatment Section (Magazine Layout) -->
+<section class="scroll-mt-32" id="treatment">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-3xl font-serif text-primary">トリートメント</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="bg-surface-container p-12 rounded-2xl relative overflow-hidden">
+<!-- Background Texture/Visual -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<label class="text-xs uppercase tracking-widest text-secondary font-bold block mb-4">おすすめ</label>
+<h3 class="text-3xl font-serif text-primary mb-6">ケラチン復元スパ</h3>
+<p class="text-on-surface-variant leading-loose mb-8">
+                   当サロン最高峰のケアメニュー。5段階の工程で毛髪内部を再構築し、弾力のある艶やかな質感を取り戻します。エイジングケアやダメージが気になる方に。
+                 </p>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="text-4xl font-serif text-primary">¥9,900</span>
+<span class="text-on-surface-variant text-sm">/ 45 分</span>
+</div>
+<button class="w-full md:w-auto px-12 py-4 bg-primary text-white rounded-md font-medium tracking-wide">選択する</button>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg border border-white/40">
+<h4 class="font-bold text-primary mb-1">炭酸スカルプクレンジング</h4>
+<p class="text-xs text-on-surface-variant">¥3,300 • 15 分</p>
+</div>
+<div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg border border-white/40">
+<h4 class="font-bold text-primary mb-1">高保湿マスクセラピー</h4>
+<p class="text-xs text-on-surface-variant">¥5,500 • 20 分</p>
+</div>
+<div class="bg-white/60 backdrop-blur-sm p-6 rounded-lg border border-white/40">
+<h4 class="font-bold text-primary mb-1">UVプロテクションコーティング</h4>
+<p class="text-xs text-on-surface-variant">¥2,200 • 10 分</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Navigation Shell (Mobile) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fef8f5] dark:bg-[#1d1b1a] shadow-[0_-4px_20px_rgba(51,20,6,0.08)] z-50 rounded-t-xl">
+<div class="flex flex-col items-center justify-center bg-[#4d2818] text-[#fef8f5] rounded-full aspect-square p-2">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-sans text-[11px] uppercase tracking-widest font-medium mt-1">予約する</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4d2818]/60 dark:text-[#fef8f5]/50 hover:bg-[#f2edea] transition-all">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+<span class="font-sans text-[11px] uppercase tracking-widest font-medium mt-1">メニュー</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4d2818]/60 dark:text-[#fef8f5]/50 hover:bg-[#f2edea] transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans text-[11px] uppercase tracking-widest font-medium mt-1">マイページ</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4d2818]/60 dark:text-[#fef8f5]/50 hover:bg-[#f2edea] transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-sans text-[11px] uppercase tracking-widest font-medium mt-1">ヘルプ</span>
+</div>
+</div>
+<!-- Footer Action Bar (Sticky Mobile) -->
+<div class="fixed bottom-0 left-0 w-full md:sticky md:bottom-8 bg-surface-container-high/95 backdrop-blur-sm border-t border-outline-variant/20 p-4 md:rounded-xl md:max-w-screen-sm md:mx-auto md:shadow-2xl md:mb-8 z-40 hidden md:flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest font-bold text-primary/60">選択中のメニュー</span>
+<span class="text-sm font-serif text-primary">メニューが選択されていません</span>
+</div>
+<button class="bg-primary text-on-primary px-10 py-3 rounded-md font-medium text-sm disabled:opacity-50" disabled="">
+      次へ進む
+    </button>
+</div>
+</body></html>

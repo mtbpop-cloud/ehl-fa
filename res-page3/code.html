@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ehl:fa - 日時の選択</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#b28acc",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e6e2df",
+                      "on-tertiary-fixed-variant": "#5a3873",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#ff92b2",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#2c0844",
+                      "on-primary-container": "#c48d78",
+                      "tertiary-container": "#44225c",
+                      "tertiary": "#2d0a46",
+                      "primary-fixed-dim": "#f5b9a2",
+                      "on-surface-variant": "#51443f",
+                      "tertiary-fixed-dim": "#e1b7fc",
+                      "outline": "#84746e",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#815340",
+                      "outline-variant": "#d6c3bc",
+                      "inverse-surface": "#32302e",
+                      "surface-container-high": "#ece7e4",
+                      "surface-variant": "#e6e2df",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#ffb1c5",
+                      "on-primary-fixed": "#321205",
+                      "on-surface": "#1d1b1a",
+                      "primary": "#331406",
+                      "primary-container": "#4d2818",
+                      "background": "#fef8f5",
+                      "inverse-on-surface": "#f5f0ed",
+                      "surface-container-low": "#f8f3f0",
+                      "surface-container": "#f2edea",
+                      "on-primary-fixed-variant": "#663c2b",
+                      "inverse-primary": "#f5b9a2",
+                      "on-secondary-fixed": "#3f001b",
+                      "surface-dim": "#ded9d6",
+                      "on-secondary-fixed-variant": "#7c2846",
+                      "tertiary-fixed": "#f3daff",
+                      "on-secondary-container": "#7a2744",
+                      "surface": "#fef8f5",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-background": "#1d1b1a",
+                      "secondary": "#9a405d",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#fef8f5",
+                      "primary-fixed": "#ffdbce",
+                      "secondary-fixed": "#ffd9e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Noto Serif JP"
+                      ],
+                      "display": [
+                              "Noto Serif JP"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        .font-serif { font-family: 'Noto Serif JP', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean editorial look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col pb-32 md:pb-0 pt-24">
+<!-- TopNavBar (Web) -->
+<nav class="hidden md:flex justify-between items-center px-10 h-24 max-w-full mx-auto fixed top-0 w-full z-50 bg-[#fef8f5]/80 backdrop-blur-xl transition-transform duration-300">
+<div class="text-2xl font-serif font-semibold text-[#331406] tracking-tighter">
+            ehl:fa
+        </div>
+<div class="flex space-x-8 items-center">
+<a class="text-[#d6c3bc] font-medium font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click" href="#">スタイリスト</a>
+<a class="text-[#d6c3bc] font-medium font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click" href="#">メニュー</a>
+<a class="text-[#4D2818] font-bold border-b-2 border-[#4D2818] pb-1 font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click" href="#">予約</a>
+<a class="text-[#d6c3bc] font-medium font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click" href="#">詳細</a>
+<a class="text-[#d6c3bc] font-medium font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click" href="#">確認</a>
+</div>
+<button class="text-[#4D2818] font-serif text-lg tracking-tight Noto Serif JP hover:text-[#9a405d] transition-all duration-500 scale-98-on-click">
+            マイページ
+        </button>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow max-w-5xl mx-auto w-full px-6 md:px-12 py-10">
+<!-- Header & Progress -->
+<header class="mb-12">
+<div class="flex items-center justify-between mb-4">
+<span class="font-sans text-xs uppercase tracking-[0.15em] text-on-surface-variant font-medium">ステップ 3/5</span>
+<span class="font-sans text-xs uppercase tracking-[0.15em] text-on-surface-variant font-medium">予約</span>
+</div>
+<h1 class="font-serif text-4xl md:text-5xl font-semibold text-primary mb-4 tracking-tight">日時の選択</h1>
+<p class="font-sans text-base text-on-surface-variant max-w-2xl">ご希望の日時を選択してください。担当スタイリストが丁寧にカウンセリングと施術をさせていただきます。</p>
+</header>
+<!-- Calendar Container (Tonal Layering) -->
+<div class="bg-surface-container rounded-xl p-6 md:p-10 mb-16 shadow-[0_4px_20px_rgb(51,20,6,0.03)]">
+<!-- Week Navigation -->
+<div class="flex items-center justify-between mb-8">
+<button aria-label="Previous Week" class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-primary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h2 class="font-serif text-xl font-semibold text-primary">2023年10月</h2>
+<button aria-label="Next Week" class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Weekly Calendar Grid -->
+<div class="overflow-x-auto no-scrollbar pb-4">
+<div class="min-w-[700px]">
+<!-- Days Header -->
+<div class="grid grid-cols-8 gap-4 mb-6">
+<div class="col-span-1"></div> <!-- Time column header empty -->
+<!-- Day Columns -->
+<div class="text-center flex flex-col items-center">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">月</span>
+<span class="font-serif text-lg text-primary">16</span>
+</div>
+<div class="text-center flex flex-col items-center">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">火</span>
+<span class="font-serif text-lg text-primary">17</span>
+</div>
+<div class="text-center flex flex-col items-center">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">水</span>
+<span class="font-serif text-lg text-primary">18</span>
+</div>
+<div class="text-center flex flex-col items-center">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">木</span>
+<span class="font-serif text-lg text-primary">19</span>
+</div>
+<div class="text-center flex flex-col items-center">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">金</span>
+<span class="font-serif text-lg text-primary">20</span>
+</div>
+<div class="text-center flex flex-col items-center bg-surface-container-lowest rounded-lg py-2 shadow-sm border border-outline-variant/20">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-secondary mb-1">土</span>
+<span class="font-serif text-lg text-primary font-bold">21</span>
+</div>
+<div class="text-center flex flex-col items-center opacity-50">
+<span class="font-sans text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mb-1">日</span>
+<span class="font-serif text-lg text-primary">22</span>
+</div>
+</div>
+<!-- Scrollable Time Slots -->
+<div class="h-[400px] overflow-y-auto no-scrollbar relative">
+<!-- 09:00 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">09:00</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- 09:30 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">09:30</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- 10:00 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">10:00</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- 10:30 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">10:30</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_12px_rgb(51,20,6,0.15)] cursor-pointer border-2 border-primary ring-2 ring-primary/20"><span class="text-lg">○</span></button> <!-- Selected State -->
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- 11:00 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">11:00</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- 11:30 -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">11:30</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+<!-- Additional time slots generated dynamically in production, omitted for brevity but demonstrating scrollability -->
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">12:00</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<div class="col-span-7 text-center text-sm text-on-surface-variant/50 py-2">...</div>
+</div>
+</div>
+<div class="grid grid-cols-8 gap-4 mb-4">
+<div class="text-right pr-4 font-sans text-xs text-on-surface-variant pt-3 border-t border-outline-variant/10">19:00</div>
+<div class="col-span-7 grid grid-cols-7 gap-4 border-t border-outline-variant/10 pt-2">
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-container-lowest hover:bg-surface flex items-center justify-center text-primary transition-colors cursor-pointer group"><span class="text-lg group-hover:scale-110 transition-transform">○</span></button>
+<button class="h-10 rounded-md bg-surface-variant/50 flex items-center justify-center text-on-surface-variant/50 cursor-not-allowed"><span>×</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-8 flex justify-end items-center space-x-6 text-sm font-sans text-on-surface-variant">
+<div class="flex items-center space-x-2"><span class="text-lg text-primary">○</span><span>予約可能</span></div>
+<div class="flex items-center space-x-2"><span class="text-on-surface-variant/50">×</span><span>予約不可</span></div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex justify-between items-center mt-12 mb-20 border-t border-outline-variant/20 pt-8">
+<button class="text-secondary font-sans font-medium underline underline-offset-4 decoration-2 hover:text-primary transition-colors">
+                メニュー選択に戻る
+            </button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 h-12 rounded-lg font-sans font-medium flex items-center justify-center hover:opacity-90 transition-opacity shadow-[0_8px_32px_rgb(51,20,6,0.15)]">
+                詳細へ進む
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 py-6 pb-10 bg-[#fef8f5] rounded-t-[2rem] shadow-[0_-8px_30px_rgb(77,40,24,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#d6c3bc] px-4 py-2 hover:text-[#9a405d] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">person_search</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">スタイリスト</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#d6c3bc] px-4 py-2 hover:text-[#9a405d] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">spa</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">メニュー</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#4D2818] text-[#fef8f5] rounded-full px-5 py-2.5 scale-95 duration-150 ease-out shadow-2xl" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">calendar_today</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">予約</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#d6c3bc] px-4 py-2 hover:text-[#9a405d] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">edit_note</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">詳細</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#d6c3bc] px-4 py-2 hover:text-[#9a405d] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">verified</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.15em] font-medium Inter">確認</span>
+</a>
+</nav>
+</body></html>
